@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shan Badminton School</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style13.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- AOS Animation Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+<style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom right, #8d67ae, #ffffff);
+  background-attachment: fixed; /* stays still when scrolling */
+  color: #222;
+}
+
+
+
+
+/* Header */
+.header {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+              url('images/sbawbg9.png') no-repeat center/cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 100px; /* add space so content doesn't hide under navbar */
+}
+
+/* Navbar */
+/* Navbar */
+
+
+.header nav.scrolled {
+  background: #000; /* Slightly darker on scroll */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 8%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.85);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+nav.scrolled {
+  background: #000;
+}
+
+
+.section {
+  background: rgba(255, 255, 255, 0.9); 
+  margin: 40px auto;
+  padding: 60px 10%;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+
+
+
+nav img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nav-links {
+  transition: right 0.4s ease-in-out;
+}
+
+.nav-links ul {
+  list-style: none;
+}
+
+.nav-links ul li {
+  display: inline-block;
+  margin: 0 20px;
+  position: relative;
+}
+
+.nav-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  padding: 8px 15px;
+  border-radius: 25px;
+}
+
+.nav-links ul li a:hover,
+.nav-links ul li a.active {
+  background: #9d3bde; /* Neon badminton vibe */
+  color: #111;
+  box-shadow: 0 4px 10px rgba(63, 40, 163, 0.597);
+}
+
+
+/* Burger menu icons */
+.fa {
+  display: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Hero text */
+.text-box h1 {
+  font-size: 3.5rem;
+  color: #fff;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  animation: fadeInDown 1s ease;
+}
+
+.text-box p {
+  font-size: 1.2rem;
+  color: #eee;
+  margin-bottom: 20px;
+}
+
+.hero-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid #9461e7;
+  padding: 10px 30px;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  background: #826fca;
+  color: #111;
+}
+
+/* Section titles */
+section h1 {
+  text-align: center;
+  margin: 60px 0 20px;
+  font-size: 2.5rem;
+  color: #111;
+}
+
+section p {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+/* About Us */
+.aboutus .row {
+  display: grid;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px 8%;
+}
+
+.coaches {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  flex: 1;
+  min-width: 220px;
+  transition: transform 0.3s;
+}
+
+.coaches:hover {
+  transform: translateY(-8px);
+  border-top: 5px solid #00ff88;
+}
+
+/* Achievements */
+.achievements .row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 20px 8%;
+}
+
+.achievements-col {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 280px;
+  height: 220px;
+  background: #111;
+  cursor: pointer;
+}
+
+.achievements-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.achievements-col:hover img {
+  transform: scale(1.1);
+  opacity: 0.6;
+}
+
+.achievements-col .layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.layer h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  background: rgba(0,0,0,0.6);
+  padding: 8px 15px;
+  border-radius: 10px;
+}
+
+/* Training Section */
+#training {
+  background: #f5f5f5;
+  padding: 80px 10%;
+  text-align: center;
+}
+
+#training h2 {
+  font-size: 2.5rem;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+#training p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+.video-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.video-container video {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+}
+
+
+.video-container video:hover {
+  transform: scale(1.05);
+}
+
+
+/* Contact */
+.contactus {
+  text-align: center;
+  padding: 60px 20px;
+  background: #111;
+  color: #fff;
+}
+
+.contactus .hero-btn {
+  border-color: #fff;
+}
+
+.contactus .hero-btn:hover {
+  background: #fff;
+  color: #111;
+}
+
+/* Footer */
+.footer {
+  background: #222;
+  text-align: center;
+  padding: 25px;
+  color: #bbb;
+}
+
+.footer h4 {
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.icons i {
+  margin: 0 12px;
+  font-size: 22px;
+  color: #00ff88;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.icons i:hover {
+  transform: scale(1.2);
+  color: #fff;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .nav-links {
+    position: fixed; /* updated */
+    background: #111;
+    height: 100vh;
+    width: 200px;
+    top: 0;
+    right: -200px;
+    text-align: left;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 999;
+  }
+
+  .nav-links ul li {
+    display: block;
+    margin: 20px;
+  }
+
+  .fa {
+    display: block;
+  }
+
+  .aboutus .row,
+  .achievements .row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+</style>
+
+</head>
+<body>
+  
+  <!-- Navbar -->
+  <nav>
+    <a href="#home"><img src="images/shanbadmintonlogo1.png" alt="Shan Logo"></a>
+    <div class="nav-links" id="navLinks">
+      <i class="fa fa-times" onclick="hideMenu()"></i>
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#training">Training</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <i class="fa fa-bars" onclick="showMenu()"></i>
+  </nav>
+
+  <!-- Hero -->
+  <section class="header" id="home">
+    <div class="text-box" data-aos="fade-up">
+      <h1>Shan Badminton School</h1>
+      <p>Where discipline meets dedication</p>
+      <a href="#contact" class="hero-btn">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section class="aboutus" id="about">
+    <h1 data-aos="fade-up">About Us</h1>
+    <p data-aos="fade-up" data-aos-delay="100">Shaping champions through skill, discipline, and hard work.</p>
+    <div class="row">
+      <div class="coaches" data-aos="zoom-in">
+        <h3>Head Coach</h3>
+        <p>Details about head coach.</p>
+      </div>
+      <div class="coaches" data-aos="zoom-in" data-aos-delay="100">
+        <h3>Assistant Coach</h3>
+        <p>Details about assistant coach.</p>
+      </div>
+      <div class="coaches" data-aos="zoom-in" data-aos-delay="200">
+        <h3>Assistant Coach</h3>
+        <p>Details about assistant coach.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section class="achievements" id="achievements">
+    <h1 data-aos="fade-up">Achievements</h1>
+    <p data-aos="fade-up" data-aos-delay="100">Proud moments of our academy.</p>
+    <div class="row">
+      <div class="achievements-col" data-aos="fade-right">
+        <img src="images/achievement1.jpg" alt="Achievement 1">
+        <div class="layer"><h3>1st Achievement</h3></div>
+      </div>
+      <div class="achievements-col" data-aos="fade-up">
+        <img src="images/achievement2.jpg" alt="Achievement 2">
+        <div class="layer"><h3>2nd Achievement</h3></div>
+      </div>
+      <div class="achievements-col" data-aos="fade-left">
+        <img src="images/achievement3.jpg" alt="Achievement 3">
+        <div class="layer"><h3>3rd Achievement</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Training -->
+  <section id="training">
+    <h2 data-aos="fade-up">Our Training</h2>
+    <p data-aos="fade-up" data-aos-delay="100">Watch how our players train with discipline and passion.</p>
+    <div class="video-container">
+      <video controls data-aos="zoom-in"><source src="/Users/aksharaashokkumar/Downloads/four corners videos 1.mp4" type="video/mp4"></video>
+      <video controls data-aos="zoom-in" data-aos-delay="100"><source src="videos/shan badmint on training 2.mov" type="video/mp4"></video>
+      <video controls data-aos="zoom-in" data-aos-delay="200"><source src="videos/shan badminton training 3.mov" type="video/mp4"></video>
+      <video controls data-aos="zoom-in" data-aos-delay="200"><source src="videos/shan badminton training 4.mov" type="video/mp4"></video>
+    </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contactus" id="contact">
+    <h1 data-aos="fade-up">Contact Us</h1>
+    <p data-aos="fade-up" data-aos-delay="100">Reach out to join our academy today.</p>
+    <a href="mailto:info@shanbadminton.com" class="hero-btn" data-aos="fade-up" data-aos-delay="200">Email Us</a>
+  </section>
+
+  <!-- Footer -->
+  <section class="footer">
+    <h4>About Us</h4>
+    <p>Building the future of badminton with passion and excellence.</p>
+    <div class="icons">
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-youtube"></i>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script>
+    let navLinks= document.getElementById("navLinks");
+
+    function showMenu(){
+      navLinks.style.right="0";
+    }
+    function hideMenu(){
+      navLinks.style.right="-200px";
+    }
+
+    // Active link on scroll
+    let sections = document.querySelectorAll("section");
+    let navLinksAll = document.querySelectorAll(".nav-links ul li a");
+    
+    window.onscroll = () => {
+      sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 100;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute("id");
+        
+        if (top >= offset && top < offset + height) {
+          navLinksAll.forEach(link => {
+            link.classList.remove("active");
+            document.querySelector('.nav-links ul li a[href*=' + id + ']').classList.add("active");
+          });
+        }
+      });
+      document.querySelector("nav").classList.toggle("scrolled", window.scrollY > 50);
+    };
+  </script>
+
+  <!-- AOS Script -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ duration: 1000, once: true });</script>
+</body>
+</html>
